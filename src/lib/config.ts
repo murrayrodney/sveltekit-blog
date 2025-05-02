@@ -1,5 +1,5 @@
-import { dev } from '$app/environment'
+import { dev } from '$app/environment';
 
-export const title = 'Shakespeare'
-export const description = 'SvelteKit blog for poets'
-export const url = dev ? 'http://localhost:5173/' : 'https://joyofcode.xyz/'
+export const title = 'Rodney Murray';
+export const description = 'SvelteKit blog for statisticians and data scientists';
+export const url = dev ? 'http://localhost:5173/' : 'https://rodney-murray-blog.netlify.app//';
