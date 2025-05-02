@@ -1,7 +1,14 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils';
+	import { formatDate, processMathElements } from '$lib/utils';
+	import Katex from 'svelte-katex';
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
+
+	onMount(() => {
+		// Process math elements after the component is mounted
+		processMathElements();
+	});
 </script>
 
 <svelte:head>

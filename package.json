@@ -33,6 +33,7 @@
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
+		"remark-math": "^3.0.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"tailwindcss": "^4.0.0",
@@ -44,8 +45,12 @@
 	"dependencies": {
 		"@fontsource/atkinson-hyperlegible": "^5.2.5",
 		"@fontsource/jetbrains-mono": "^5.2.5",
+		"katex": "^0.16.22",
 		"lucide-svelte": "^0.506.0",
 		"open-props": "^1.7.15",
-		"shiki": "^3.3.0"
+		"rehype-katex": "^7.0.1",
+		"rehype-katex-svelte": "^1.2.0",
+		"shiki": "^3.3.0",
+		"svelte-katex": "^0.1.2"
 	}
 }
