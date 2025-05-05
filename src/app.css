@@ -1,5 +1,6 @@
 @import '@fontsource/atkinson-hyperlegible';
 @import '@fontsource/jetbrains-mono';
+@import 'tailwindcss';
 
 html {
 	/* font */
@@ -15,7 +16,7 @@ html {
 	--surface-3-dark: var(--gray-10);
 	--surface-4-dark: var(--gray-9);
 	--background-dark: var(--gradient-8);
-	--border-dark: var(--gray-9);
+	--border-dark: var(--gray-7);
 
 	/* light */
 	--brand-light: var(--orange-10);
@@ -70,7 +71,7 @@ html {
 	--surface-3: var(--surface-3-dark);
 	--surface-4: var(--surface-4-dark);
 	--background: var(--background-dark);
-	--border: var(--border-dark);
+	--border: var(--border-light);
 }
 
 [color-scheme='light'] {
