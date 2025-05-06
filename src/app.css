@@ -168,3 +168,31 @@ li {
 		tab-size: 2;
 	}
 }
+
+/* KaTeX math styling fixes */
+.katex {
+	font:
+		normal 1.1em KaTeX_Main,
+		Times New Roman,
+		serif;
+	line-height: 1.2;
+	text-indent: 0;
+	text-rendering: auto;
+}
+
+.math-inline .katex .msupsub {
+	text-align: left;
+	position: relative;
+	top: -1.5em;
+}
+
+.katex .vlist > span {
+	display: inline-block;
+	position: relative;
+}
+
+/* Ensure proper vertical alignment of diacritical marks */
+.math-inline .katex .accent-body {
+	position: relative;
+	top: -1.5em;
+}

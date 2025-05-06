@@ -1,14 +1,23 @@
 <script lang="ts">
-	import Footer from './footer.svelte'
-	import Header from './header.svelte'
+	import Footer from './footer.svelte';
+	import Header from './header.svelte';
 
-	import 'open-props/style'
-	import 'open-props/normalize'
-	import 'open-props/buttons'
-	import '../app.css'
+	import 'open-props/style';
+	import 'open-props/normalize';
+	import 'open-props/buttons';
+	import '../app.css';
 
-	let { children, data } = $props()
+	let { children, data } = $props();
 </script>
+
+<svelte:head>
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+		integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+		crossorigin="anonymous"
+	/>
+</svelte:head>
 
 <div class="layout">
 	<Header />
