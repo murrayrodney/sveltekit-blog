@@ -196,3 +196,7 @@ li {
 	position: relative;
 	top: -1.5em;
 }
+
+main {
+	margin-top: calc(var(--size-7) * 1.25);
+}
