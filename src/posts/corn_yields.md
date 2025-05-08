@@ -46,7 +46,7 @@ I will group the states according to this table:
 
 Now that we grouped states based on my perceived similarity we can see some of the trends and differences a little easier. We should note how similar the areas are for yields where the land is irrigated after 1980 while there are some differences prior to 1980. It is also interesting to note how different each areas non-irrigated acreage performs (my guess would be due to rainfall amounts and potentially temperatures). Also note how the yields for the non-irrigated acreage appears significantly lower than that of the irrigated acreage, this should not be surprising. Another observation to take stock of is the short period of time that the Eastern states (really just one - Delaware) have data available for; we could remove this, but I will leave it in for now with the reminder to look at the standard errors in our model. Now let’s use a linear regression model to see if we can parse out the effects of the area, irrigation, and time.
 
-> :warning: **Confounders!** Something to be aware of as we move forward is that time, or specifically, the year that the corn was planted and harvested appears to have a large effect on the yields. There is no physical reason why corn with all the same treatments (irrigation, fertilization, pest control, etc.) would yield more grain in 2020 in comparison to 1980. I say this because there are many confounding variables that are not present in this data set such as fertilizer use, pest control, and crop rotation practices which have increase yields over time as we have continually discovered better farming methods to increase the yields of our crops. This presents a spurious relationship between the year that the crop was planted and harvested and the observed yeilds.
+> :warning: **Confounders!** Something to be aware of as we move forward is that time, or specifically, the year that the corn was planted and harvested appears to have a large effect on the yields. There is no physical reason why corn with all the same trgeatments (irrigation, fertilization, pest control, etc.) would yield more grain in 2020 in comparison to 1980. I say this because there are many confounding variables that are not present in this data set such as fertilizer use, pest control, and crop rotation practices which have increase yields over time as we have continually discovered better farming methods to increase the yields of our crops. This presents a spurious relationship between the year that the crop was planted and harvested and the observed yeilds.
 
 ## Ordinary Least Squares (OLS) Regression
 
@@ -86,13 +86,9 @@ In summary the plots above show the model does a reasonable job of predicting th
 
 Luckily R makes it easy to add the multiplicative influence by asking R to fit a model with all of the interactions as shown below. As mentioned above, this allows for the categorical values to influence not only the intercept but also the slope of yield over time. Now when we write our model out, it looks something more like this:
 
-$$
-Yield = \beta_0 + \beta_1 Area + \beta_2 Irrigated + \beta_3 Year +
-$$
+$$Yield = \beta_0 + \beta_1 Area + \beta_2 Irrigated + \beta_3 Year$$
 
-$$
-\beta_4 Area \cdot Irrigated + \beta_5 Area \cdot Year + \beta_6 Irrigated \cdot Year + \epsilon
-$$
+$$\beta_4 Area \cdot Irrigated + \beta_5 Area \cdot Year + \beta_6 Irrigated \cdot Year + \epsilon$$
 
 Now when we take a look at our residuals vs. fitted values, the trend in the mean is much better (there still is a little bit there, but likely due to the auto-correlation I will discuss later). We do still see non-constant variance which will have to be addressed.
 
