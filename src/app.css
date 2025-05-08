@@ -167,34 +167,40 @@ li {
 		border-radius: 8px;
 		tab-size: 2;
 	}
-}
 
-/* KaTeX math styling fixes */
-.katex {
-	font:
-		normal 1.1em KaTeX_Main,
-		Times New Roman,
-		serif;
-	line-height: 1.2;
-	text-indent: 0;
-	text-rendering: auto;
-}
+	/* MathJax styling */
+	.math-display {
+		overflow-x: auto;
+		margin: 1em 0;
+		text-align: center;
+	}
 
-.math-inline .katex .msupsub {
-	text-align: left;
-	position: relative;
-	top: -1.5em;
-}
+	mjx-container[jax='SVG'][display='true'] {
+		display: block;
+		margin: 1em 0;
+		text-align: center;
+	}
 
-.katex .vlist > span {
-	display: inline-block;
-	position: relative;
-}
+	mjx-container[jax='SVG'][display='false'] {
+		display: inline;
+		margin: 0;
+		padding: 1px 0;
+		vertical-align: -0.25em;
+	}
 
-/* Ensure proper vertical alignment of diacritical marks */
-.math-inline .katex .accent-body {
-	position: relative;
-	top: -1.5em;
+	mjx-container > svg {
+		display: inline-block;
+		margin: auto;
+		height: auto;
+	}
+
+	/* Ensure MathJax SVG containers stay inline */
+	.math-inline > mjx-container {
+		display: inline-block !important;
+		margin: 0 !important;
+		vertical-align: -0.25em !important;
+		white-space: nowrap;
+	}
 }
 
 main {
