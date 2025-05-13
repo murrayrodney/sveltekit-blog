@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-	let priorMean = $state(0);
-	let priorStd = $state(1);
+	let priorMean = $state(40);
+	let priorStd = $state(10);
 	let sampleSize = $state(10);
 	let plotDiv: HTMLElement;
 	let Plotly: any;
@@ -35,7 +35,7 @@
 	}
 
 	let samples = $derived.by(() => {
-		return generateSamples(2, 1, sampleSize);
+		return generateSamples(20, 10, sampleSize);
 	});
 
 	// Calculate sample mean and variance
@@ -78,7 +78,7 @@
 		const posteriorPdf = x.map((val) => normalPDF(val, posteriorMean, posteriorStd));
 		const yMax = Math.max(Math.max(...priorPdf), Math.max(...posteriorPdf));
 
-		const trueMean = 2; // The true mean used in sample generation
+		const trueMean = 20; // The true mean used in sample generation
 
 		const data = [
 			{
@@ -150,12 +150,14 @@
 
 <div class="container">
 	<div class="controls">
-		<button on:click={() => (samples = generateSamples(2, 1, sampleSize))}>Generate Samples</button>
+		<button on:click={() => (samples = generateSamples(20, 10, sampleSize))}
+			>Generate Samples</button
+		>
 
 		<div class="slider-group">
 			<label>
 				Prior Mean:
-				<input type="range" bind:value={priorMean} min="-5" max="5" step="0.1" />
+				<input type="range" bind:value={priorMean} min="-100" max="100" step="1" />
 				<span>{priorMean.toFixed(1)}</span>
 			</label>
 		</div>
@@ -163,7 +165,7 @@
 		<div class="slider-group">
 			<label>
 				Prior Standard Deviation:
-				<input type="range" bind:value={priorStd} min="0.1" max="5" step="0.1" />
+				<input type="range" bind:value={priorStd} min="1" max="50" step="1" />
 				<span>{priorStd.toFixed(1)}</span>
 			</label>
 		</div>
