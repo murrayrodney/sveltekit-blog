@@ -13,9 +13,6 @@
 			<a href="/posts">Posts</a>
 		</li>
 		<li>
-			<a href="/bayesian-inference">Bayes Rules</a>
-		</li>
-		<li>
 			<a href="/contact">Contact</a>
 		</li>
 	</ul>
