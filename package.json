@@ -45,8 +45,10 @@
 	"dependencies": {
 		"@fontsource/atkinson-hyperlegible": "^5.2.5",
 		"@fontsource/jetbrains-mono": "^5.2.5",
+		"@types/plotly.js": "^3.0.0",
 		"lucide-svelte": "^0.506.0",
 		"open-props": "^1.7.15",
+		"plotly.js-dist-min": "^3.0.1",
 		"rehype-mathjax": "^7.1.0",
 		"shiki": "^3.3.0"
 	}
