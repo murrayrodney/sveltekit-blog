@@ -5,11 +5,27 @@
 	let priorMean = $state(0);
 	let priorStd = $state(1);
 	let sampleSize = $state(10);
-	let samples: number[] = [];
 	let plotDiv: HTMLElement;
 	let Plotly: any;
 
-	function generateSamples(trueMean = 2, trueStd = 1) {
+	function calcPosteriorVar(priorStd: number, sampleSize: number, sampleVar: number): number {
+		return 1 / (1 / Math.pow(priorStd, 2) + sampleSize / sampleVar);
+	}
+
+	function calcPosteriorMean(
+		priorMean: number,
+		priorStd: number,
+		sampleSize: number,
+		sampleMean: number,
+		sampleVar: number
+	): number {
+		const posteriorVar = calcPosteriorVar(priorStd, sampleSize, sampleVar);
+		return (
+			posteriorVar * (priorMean / Math.pow(priorStd, 2) + (sampleSize * sampleMean) / sampleVar)
+		);
+	}
+
+	function generateSamples(trueMean = 2, trueStd = 1, sampleSize = 10) {
 		return Array.from({ length: sampleSize }, () => {
 			const u1 = Math.random();
 			const u2 = Math.random();
@@ -18,36 +34,63 @@
 		});
 	}
 
+	let samples = $derived.by(() => {
+		return generateSamples(2, 1, sampleSize);
+	});
+
+	// Calculate sample mean and variance
+	const sampleMean = $derived.by(() => {
+		return samples.reduce((a, b) => a + b, 0) / samples.length;
+	});
+	const sampleVar = $derived.by(() => {
+		return samples.reduce((a, b) => a + Math.pow(b - sampleMean, 2), 0) / samples.length;
+	});
+
+	// Calculate posterior variance and mean
+	const posteriorVar = $derived.by(() => {
+		return calcPosteriorVar(priorStd, sampleSize, sampleVar);
+	});
+	const posteriorStd = $derived.by(() => {
+		return Math.sqrt(posteriorVar);
+	});
+	const posteriorMean = $derived.by(() => {
+		return calcPosteriorMean(priorMean, priorStd, sampleSize, sampleMean, sampleVar);
+	});
+
 	function normalPDF(x: number, mean: number, std: number) {
 		return Math.exp(-0.5 * Math.pow((x - mean) / std, 2)) / (std * Math.sqrt(2 * Math.PI));
 	}
 
-	async function updatePlot(priorMean: number, priorStd: number, sampleSize: number) {
+	async function updatePlot(
+		priorMean: number,
+		priorStd: number,
+		posteriorMean: number,
+		posteriorStd: number
+	) {
 		if (!browser || !Plotly) return;
 
-		samples = generateSamples();
-		const sampleMean = samples.reduce((a, b) => a + b, 0) / samples.length;
-		const sampleVar = samples.reduce((a, b) => a + Math.pow(b - sampleMean, 2), 0) / samples.length;
+		const minX = Math.min(priorMean - 4 * priorStd, posteriorMean - 4 * posteriorStd);
+		const maxX = Math.max(priorMean + 4 * priorStd, posteriorMean + 4 * posteriorStd);
+		const nPlot = 500;
+		const step = (maxX - minX) / nPlot;
+		const x = Array.from({ length: nPlot }, (_, i) => minX + i * step);
+		const priorPdf = x.map((val) => normalPDF(val, priorMean, priorStd));
+		const posteriorPdf = x.map((val) => normalPDF(val, posteriorMean, posteriorStd));
+		const yMax = Math.max(Math.max(...priorPdf), Math.max(...posteriorPdf));
 
-		const posteriorVar = 1 / (1 / Math.pow(priorStd, 2) + samples.length / sampleVar);
-		const posteriorMean =
-			posteriorVar *
-			(priorMean / Math.pow(priorStd, 2) + (samples.length * sampleMean) / sampleVar);
-		const posteriorStd = Math.sqrt(posteriorVar);
-
-		const x = Array.from({ length: 500 }, (_, i) => -5 + i * 0.1);
+		const trueMean = 2; // The true mean used in sample generation
 
 		const data = [
 			{
 				x: x,
-				y: x.map((val) => normalPDF(val, priorMean, priorStd)),
+				y: priorPdf,
 				type: 'scatter',
 				name: 'Prior',
 				line: { color: 'blue' }
 			},
 			{
 				x: x,
-				y: x.map((val) => normalPDF(val, posteriorMean, posteriorStd)),
+				y: posteriorPdf,
 				type: 'scatter',
 				name: 'Posterior',
 				line: { color: 'red' }
@@ -59,6 +102,14 @@
 				mode: 'markers',
 				name: 'Samples',
 				marker: { color: 'green', size: 10 }
+			},
+			{
+				x: [trueMean, trueMean],
+				y: [0, yMax],
+				type: 'scatter',
+				mode: 'lines',
+				name: 'True Mean',
+				line: { color: 'black', width: 2, dash: 'dash' }
 			}
 		];
 
@@ -66,7 +117,12 @@
 			title: 'Bayesian Inference for Mean',
 			xaxis: { title: 'Value' },
 			yaxis: { title: 'Density' },
-			showlegend: true
+			showlegend: true,
+			legend: {
+				orientation: 'h', // horizontal orientation
+				y: -0.1, // position below the plot
+				yanchor: 'top' // anchor to the top of the legend box
+			}
 		};
 
 		Plotly.react(plotDiv, data, layout);
@@ -75,21 +131,27 @@
 	onMount(async () => {
 		if (browser) {
 			Plotly = await import('plotly.js-dist-min');
-			updatePlot(priorMean, priorStd, sampleSize);
+			updatePlot(priorMean, priorStd, posteriorMean, posteriorStd);
 		}
 	});
 
 	$effect(() => {
-		console.log('Updating plot with new parameters:', priorMean, priorStd, sampleSize);
+		// Reference the variables to make them dependencies
+		void priorMean;
+		void priorStd;
+		void posteriorMean;
+		void posteriorStd;
 
 		if (browser && plotDiv && Plotly) {
-			updatePlot(priorMean, priorStd, sampleSize);
+			updatePlot(priorMean, priorStd, posteriorMean, posteriorStd);
 		}
 	});
 </script>
 
 <div class="container">
 	<div class="controls">
+		<button on:click={() => (samples = generateSamples(2, 1, sampleSize))}>Generate Samples</button>
+
 		<div class="slider-group">
 			<label>
 				Prior Mean:
