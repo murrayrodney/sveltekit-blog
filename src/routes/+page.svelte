@@ -4,52 +4,44 @@
 </script>
 
 <main>
-	<h1>Rodney Murray</h1>
-	<div class="grid w-15 grid-cols-2">
-		<a
-			href="https://www.linkedin.com/in/rodney-murray-308780a2/"
-			target="_blank"
-			rel="noopener noreferrer"
-			style="display: flex; align-items: center; text-decoration: none;"
-		>
-			{#if theme.current === 'dark'}
-				<img
-					src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
-					alt="LinkedIn"
-					style="width: 24px; height: 24px; margin-right: 8px; filter: invert(1);"
-				/>
-			{:else}
-				<img
-					src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
-					alt="LinkedIn"
-					style="width: 24px; height: 24px; margin-right: 8px;"
-				/>
-			{/if}
-		</a>
+	<div class="hero">
+		<img src="/rodney_italy.jpg" alt="Rodney Murray" class="background-photo" />
+		<div class="hero-content">
+			<div class="profile-circle">
+				<img src="/IMG_5984.jpeg" alt="Rodney Murray" />
+			</div>
+			<div class="text-content">
+				<h1>Rodney Murray</h1>
+				<div class="grid w-15 grid-cols-2">
+					<a
+						href="https://www.linkedin.com/in/rodney-murray-308780a2/"
+						target="_blank"
+						rel="noopener noreferrer"
+						style="display: flex; align-items: center; text-decoration: none;"
+					>
+						<img
+							src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+							alt="LinkedIn"
+							style="width: 24px; height: 24px; margin-right: 8px;"
+						/>
+					</a>
 
-		<a
-			href="https://github.com/murrayrodney"
-			target="_blank"
-			rel="noopener noreferrer"
-			style="display: flex; align-items: center; text-decoration: none;"
-		>
-			{#if theme.current === 'dark'}
-				<img
-					src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
-					alt="GitHub"
-					style="width: 24px; height: 24px; margin-right: 8px; filter: invert(1);"
-				/>
-			{:else}
-				<img
-					src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
-					alt="GitHub"
-					style="width: 24px; height: 24px; margin-right: 8px;"
-				/>
-			{/if}
-		</a>
+					<a
+						href="https://github.com/murrayrodney"
+						target="_blank"
+						rel="noopener noreferrer"
+						style="display: flex; align-items: center; text-decoration: none;"
+					>
+						<img
+							src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+							alt="GitHub"
+							style="width: 24px; height: 24px; margin-right: 8px;"
+						/>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<img src="/IMG_5984.jpeg" alt="Rodney Murray" class="background-photo" />
 
 	<h2>Engineer/Data Scientist</h2>
 
@@ -304,14 +296,81 @@
 		line-height: 1.5;
 	}
 
+	.hero {
+		position: relative;
+		width: 100%;
+		height: 50vh;
+		margin-bottom: 2em;
+	}
+
+	.hero .background-photo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 1;
+		filter: blur(4px);
+		transform: scale(1.1);
+	}
+
+	.hero-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		text-align: left;
+		color: var(--color-gray-900);
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		background-color: rgba(255, 255, 255, 0.7);
+		padding: 1.5rem;
+		border-radius: 1.5rem;
+	}
+
+	.hero-content .profile-circle {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 3px solid white;
+		flex-shrink: 0;
+	}
+
+	.hero-content .profile-circle img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.hero-content .text-content {
+		flex-grow: 1;
+	}
+
+	.hero-content h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
 	.background-photo {
-		/* width: 100%; */
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
 		object-fit: cover;
 		border-radius: 15px;
 		height: 50vh;
-		margin-top: 1em;
+	}
+	.profile-photo {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		object-fit: cover;
+		border-radius: 15px;
+		height: 50vh;
+		margin-top: 125px;
 	}
 </style>
