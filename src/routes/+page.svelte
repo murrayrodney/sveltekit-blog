@@ -1,3 +1,4 @@
+<!-- prettier-ignore-file -->
 <script lang="ts">
 	import { theme } from '$lib/theme.svelte';
 </script>
@@ -51,6 +52,7 @@
 
 	<h2>Engineer/Data Scientist</h2>
 
+	<!-- prettier-ignore-start -->
 	<p>
 		I am a data scientist who started off as a petroleum engineer in Alaska after graduating from
 		the University of Wyoming with a degree in Chemical Engineering. After working as an engineer
@@ -59,6 +61,116 @@
 		that position and recognizing an opportunity to build a better foundation in statistics I began
 		the Master of Applied Statistics program from Colorado State University.
 	</p>
+	<!-- prettier-ignore-end -->
+
+	<h2>Experiences</h2>
+
+	<dl>
+		<div class="experience">
+			<h3>Senior Data Scientist</h3>
+			<p class="company">ConocoPhillips</p>
+			<p class="date-location">June 2020 – Present | Helena, MT (Remote)</p>
+			<p class="description">
+				Lead data science initiatives to optimize oilfield operations, production, and data
+				infrastructure using advanced analytics, machine learning, and cloud technologies.
+			</p>
+			<ul class="responsibilities">
+				<li>
+					Utilized reinforcement learning with a custom reservoir model for waterflood optimization
+					resulting in &gt;$9 million annual increase in revenue.
+				</li>
+				<li>
+					Performed reliability analysis on ESP runtime variations across vendors, providing
+					data-driven insights for vendor selection for future wells.
+				</li>
+				<li>
+					Led a team to trial and deploy a machine learning model and optimizer in AWS integrated
+					with process control systems for use by operations increasing revenue by &gt;$6 million
+					annually.
+				</li>
+				<li>
+					Led a team and developed a model to forecast production rates. Implemented with
+					distributed computing to reduce time to insights by &gt;30x.
+				</li>
+				<li>
+					Established as a technical authority in data warehousing technologies (Snowflake, AWS
+					Athena, dbt), reducing technical debt and accelerating time to insights. Mentored and
+					upskilled engineers, promoting a culture of data excellence.
+				</li>
+			</ul>
+		</div>
+
+		<div class="experience">
+			<h3>Voidage Management Coordinator</h3>
+			<p class="company">ConocoPhillips</p>
+			<p class="date-location">January 2019 – June 2020 | Anchorage, AK</p>
+			<p class="description">
+				Coordinated waterflood and gas injection operations, leveraging analytics and optimization
+				to maximize production and efficiency across assets.
+			</p>
+			<ul class="responsibilities">
+				<li>
+					Developed and deployed a surface network model utilizing machine learning and genetic
+					algorithms to optimize daily production and injection increasing revenue by &gt;$5 million
+					annually from operational changes to injection systems. Presented in <a
+						href="https://onepetro.org/SPEATCE/proceedings-abstract/20ATCE/20ATCE/D021S006R002/451260"
+						target="_blank"
+						rel="noopener noreferrer">SPE-201760-MS.</a
+					>
+				</li>
+				<li>
+					Implemented custom optimization algorithms to allocate resources for water alternating gas
+					injection conversions leading to improved production and reduced time spent by &gt;4
+					hrs./week.
+				</li>
+				<li>
+					Actively shared new data analysis processes with two international business units, leading
+					to adoption and implementation of the process in Norwegian assets.
+				</li>
+			</ul>
+		</div>
+
+		<div class="experience">
+			<h3>Reservoir Engineer</h3>
+			<p class="company">ConocoPhillips</p>
+			<p class="date-location">July 2014 – January 2019 | Anchorage, AK</p>
+			<p class="description">
+				Provided reservoir engineering support for waterflood optimization, project economics, and
+				simulation studies to drive value in mature assets.
+			</p>
+			<ul class="responsibilities">
+				<li>
+					Evaluated economics and received approval for expense projects totaling &gt;$2 million
+					NPV.
+				</li>
+				<li>
+					Utilized an HPC cluster and reservoir simulation to analyze performance of 500 injector
+					wells.
+				</li>
+				<li>
+					Led pattern health reviews resulting in decisions leading to a &gt; $6 million annual
+					revenue increase.
+				</li>
+			</ul>
+		</div>
+
+		<div class="experience">
+			<h3>Engineer</h3>
+			<p class="company">ConocoPhillips</p>
+			<p class="date-location">July 2014 - October 2016 | Anchorage, AK</p>
+
+			<p class="description">
+				Studied historical fill clean outs done with coiled tubing to optimize selection of future
+				candidates.
+			</p>
+			<ul class="responsibilities">
+				<li>
+					Utilize type pattern and full field reservoir models to optimize selection of current and
+					future EOR targets.
+				</li>
+			</ul>
+		</div>
+	</dl>
 
 	<h2>Skills</h2>
 
@@ -122,137 +234,6 @@
 			</p>
 		</li>
 	</ul>
-
-	<h2>Experiences</h2>
-
-	<dl>
-		<div class="experience">
-			<h3>Senior Data Scientist</h3>
-			<p class="company">ConocoPhillips</p>
-			<p class="date-location">September 2021 - Present | Helena, MT (Remote)</p>
-
-			<p class="description">
-				Use machine learning and statistical methods to optimize reservoir performance and
-				production.
-			</p>
-			<ul class="responsibilities">
-				<li>
-					Implement a custom analytical reservoir model and reinforcement learning algorithms to
-					optimize waterflood for a small reservoir resulting in >$750k/month uplift from
-					operational changes.
-				</li>
-				<li>
-					Utilize Bayesian hierarchical models to estimate and prioritize wells for a watercut
-					re-calibration by field metering technicians.
-				</li>
-				<li>
-					Mentor engineers to automate data pipelines in Python and utilize AWS services for a
-					datalake to make results consumable by others.
-				</li>
-			</ul>
-		</div>
-
-		<div class="experience">
-			<h3>Senio Data Scientist</h3>
-			<p class="company">ConocoPhillips</p>
-			<p class="date-location">June 2020 - September 2021 | Anchorage, AK</p>
-
-			<p class="description">
-				Use machine learning and statistical methods to optimize reservoir performance and
-				production.
-			</p>
-			<ul class="responsibilities">
-				<li>
-					Use TensorFlow to build a deep neural network for forecast production from the Kuparuk
-					reservoir - resulted in ~30x reduction in computation time (results in minutes instead of
-					hours)
-				</li>
-				<li>
-					Utilize Spark for distributed computing with an HPC cluster and AWS datalake environment
-					to deliver actionable insights from 10,000's of unique reservoir forecasts.
-				</li>
-				<li>
-					Deploy a production network model in available analytics platforms to automate jobs and
-					make a simple web app available for engineers to run cases and consume results.
-				</li>
-			</ul>
-		</div>
-
-		<div class="experience">
-			<h3>Voidage Management Coordinator</h3>
-			<p class="company">ConocoPhillips</p>
-			<p class="date-location">January 20219 - June 2020 | Anchorage, AK</p>
-
-			<p class="description">
-				Provide support for operations, reservoir engineers, and production engineers for the
-				Greater Kuparuk Area to manage the large waterflood and miscible gas floods for Enhanced Oil
-				Recovery.
-			</p>
-			<ul class="responsibilities">
-				<li>
-					Collaborated with a core team to develop a network model utilizing machine learning and
-					genetic algorithms to optimize daily production and injection increasing revenue by more
-					than $500k/month from operational changes.
-				</li>
-				<li>
-					Implemented custom optimization algorithms to allocate resources for water alternating gas
-					injection conversions leading to improved production and reduced time spent by
-					>4hrs./week.
-				</li>
-				<li>
-					Collaborated with operations to implement injection network configuration changes
-					resulting in >$1 million NPV.
-				</li>
-				<li>
-					Actively shared new data analysis processes with two international business units, leading
-					to adoption and implementation of the process in Norwegian assets.
-				</li>
-			</ul>
-		</div>
-
-		<div class="experience">
-			<h3>Reservoir Engineer</h3>
-			<p class="company">ConocoPhillips</p>
-			<p class="date-location">October 2016 - December 2018 | Anchorage, AK</p>
-
-			<p class="description">
-				Responsible for reservoir engineering support of the CPF3 area - primarily concerned with
-				optimizing waterflood of base assets and assisting with identification of new development
-				opportunities.
-			</p>
-			<ul class="responsibilities">
-				<li>
-					Utilize HPC cluster and reservoir simulation to analyze performance of ~500 injector
-					wells.
-				</li>
-				<li>
-					Led pattern health reviews resulting in decisions leading to a >$500k/month revenue
-					increase.
-				</li>
-				<li>
-					Enabled use of reservoir engineering simulation results with BI tools for a broad
-					community of non-users enabling better decision making.
-				</li>
-			</ul>
-		</div>
-
-		<div class="experience">
-			<h3>Engineer</h3>
-			<p class="company">ConocoPhillips</p>
-			<p class="date-location">July 2014 - October 2016 | Anchorage, AK</p>
-
-			<p class="description">
-				Studied historical fill clean outs done with coiled tubing to optimize selection of future
-				candidates.
-			</p>
-			<ul class="responsibilities">
-				<li>
-					Utilize type pattern and full field reservoir models to optimize selection of current and
-					future EOR targets.
-				</li>
-			</ul>
-		</div>
-	</dl>
 </main>
 
 <style>
@@ -292,6 +273,7 @@
 		font-size: 1.5rem;
 		margin-bottom: 5px;
 		color: var(--primary);
+		width: 100%;
 	}
 
 	.company {
