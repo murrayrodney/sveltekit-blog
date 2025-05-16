@@ -5,7 +5,6 @@
 
 <main>
 	<h1>Rodney Murray</h1>
-
 	<div class="grid w-15 grid-cols-2">
 		<a
 			href="https://www.linkedin.com/in/rodney-murray-308780a2/"
@@ -49,6 +48,8 @@
 			{/if}
 		</a>
 	</div>
+
+	<img src="/rodney_italy.jpg" alt="Rodney Murray" class="background-photo" />
 
 	<h2>Engineer/Data Scientist</h2>
 
@@ -301,5 +302,11 @@
 	.responsibilities li {
 		margin-bottom: 8px;
 		line-height: 1.5;
+	}
+
+	.background-photo {
+		width: 100%;
+		height: auto;
+		margin-top: 1em;
 	}
 </style>
