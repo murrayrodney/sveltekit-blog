@@ -49,10 +49,10 @@
 	<p>
 		I am a data scientist who started off as a petroleum engineer in Alaska after graduating from
 		the University of Wyoming with a degree in Chemical Engineering. After working as an engineer
-		for several years I discovered my love for working with data problems which lead me to a data
-		science based role (Data Analytics Engineer in our company). After several months of working in
-		that position and recognizing an opportunity to build a better foundation in statistics I began
-		the Master of Applied Statistics program from Colorado State University.
+		for several years I discovered my love for working with data problems which lead me to a senior
+		data scientist at ConocoPhillips. After several months of working in that position and
+		recognizing an opportunity to build a better foundation in statistics I got a Master of Applied
+		Statistics from Colorado State University.
 	</p>
 	<!-- prettier-ignore-end -->
 
