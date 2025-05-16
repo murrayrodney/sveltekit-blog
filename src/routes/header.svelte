@@ -2,11 +2,15 @@
 	import Toggle from './toggle.svelte';
 	import * as config from '$lib/config';
 	let isMenuOpen = false;
+
+	function closeMenu() {
+		isMenuOpen = false;
+	}
 </script>
 
 <nav>
 	<div class="nav-content">
-		<a href="/" class="title">
+		<a href="/" class="title" on:click={closeMenu}>
 			<b>{config.title}</b>
 		</a>
 
@@ -25,10 +29,10 @@
 
 	<ul class="links" class:open={isMenuOpen}>
 		<li>
-			<a href="/posts">Posts</a>
+			<a href="/posts" on:click={closeMenu}>Posts</a>
 		</li>
 		<li>
-			<a href="/contact">Contact</a>
+			<a href="/contact" on:click={closeMenu}>Contact</a>
 		</li>
 		<li class="theme-toggle">
 			<Toggle />
