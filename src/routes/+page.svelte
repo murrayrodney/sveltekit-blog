@@ -49,7 +49,7 @@
 		</a>
 	</div>
 
-	<img src="/rodney_italy.jpg" alt="Rodney Murray" class="background-photo" />
+	<img src="/IMG_5984.jpeg" alt="Rodney Murray" class="background-photo" />
 
 	<h2>Engineer/Data Scientist</h2>
 
@@ -305,8 +305,13 @@
 	}
 
 	.background-photo {
-		width: 100%;
-		height: auto;
+		/* width: 100%; */
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		object-fit: cover;
+		border-radius: 15px;
+		height: 50vh;
 		margin-top: 1em;
 	}
 </style>
