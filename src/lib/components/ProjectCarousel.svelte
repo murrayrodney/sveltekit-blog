@@ -19,7 +19,7 @@
 			if (isAutoPlaying) {
 				nextSlide();
 			}
-		}, 4000);
+		}, 8000);
 	}
 
 	function stopAutoPlay() {
