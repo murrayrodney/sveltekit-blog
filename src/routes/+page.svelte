@@ -179,61 +179,80 @@
 
 	<ul class="skills">
 		<li class="skill">
-			<h3>Python</h3>
+			<h3>AWS (Sagemaker, Athena, S3)</h3>
 			<p>
-				Use of Python for scientific computing, machine learning, and data science workflows.
-				Familiar with libraries such as Numpy, Pandas, Keras/Tensorflow/ PyMC, Scikit-learn
+				Integrated S3, Athena, and Sagemaker to build scalable data pipelines, deploy ML models, and
+				enable real-time analytics for oilfield operations.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>R</h3>
+			<h3>CI/CD</h3>
 			<p>
-				Use of R for statistical modeling and analysis of experiments. Familiar with the Tidyverse,
-				survival modeling, and mixed modeling libraries.
+				Developed and maintained CI/CD pipelines for automated testing and deployment of data
+				science and analytics projects, ensuring rapid and reliable delivery.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>dbt</h3>
+			<p>
+				Designed and managed data transformation workflows in dbt for Snowflake, standardizing
+				analytics engineering and enabling robust version control and CI/CD processes with GitHub.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Distributed Computing</h3>
+			<p>
+				Leveraged Ray to accelerate model training and inference, reducing time to insight for large
+				datasets.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Docker</h3>
+			<p>
+				Containerized data science applications for consistent development, testing, and deployment
+				across environments.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Python</h3>
+			<p>
+				Developed machine learning and Bayesian models for production optimization and forecasting
+				using PyMC, scikit-learn, and Keras/TensorFlow.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Snowflake</h3>
+			<p>
+				Architected and optimized cloud data warehouses in Snowflake to support analytics,
+				reporting, and machine learning workflows.
 			</p>
 		</li>
 		<li class="skill">
 			<h3>SQL</h3>
-			<p>Querying, summarizing, and manipulating large datasets</p>
-		</li>
-		<li class="skill">
-			<h3>Statistics</h3>
 			<p>
-				Application of statistics in the engineering domain to uncover important relationships and
-				inform decisions. Significant utilization of both tradtional (frequentist) and Bayesian
-				methods for modeling and analysis.
+				Designed and executed complex SQL queries for data extraction, transformation, and analysis
+				across large-scale datasets.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>Maching learning</h3>
+			<h3>SvelteKit</h3>
 			<p>
-				Implementation of machine learning algorithms to make better and faster predictions with an
-				emphasis in integration of physics based processes.
+				Built interactive web applications and internal tools for engineering workflows using
+				SvelteKit and JavaScript.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>Reinforcement Learning</h3>
-			<p>Leveraged for waterflood optimization with custom built environments.</p>
-		</li>
-		<li class="skill">
-			<h3>AWS</h3>
+			<h3>Git</h3>
 			<p>
-				Use AWS services such as S3, Athena, and Sagemaker to integrate new data sources into
-				datalakes and make models available to other engineers.
+				Used Git, GitHub, and GitLab for version control, collaboration, and CI/CD integration in
+				analytics and engineering projects.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>Reservoir Engineering</h3>
+			<h3>Terraform</h3>
 			<p>
-				Expertise in optimization of existing production and injection patterns as a part of complex
-				integrated surface networks and extremely faulted reservoirs.
-			</p>
-		</li>
-		<li class="skill">
-			<h3>Production Engineering</h3>
-			<p>
-				Optimization of producing and injecting wells with a focus on complex integrated surface
-				networks.
+				Provisioned and managed cloud infrastructure as code using Terraform for reproducible and
+				scalable deployments of ML infrastructure.
 			</p>
 		</li>
 	</ul>
