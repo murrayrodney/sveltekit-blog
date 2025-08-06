@@ -114,22 +114,25 @@
 			</div>
 
 			{#if projects.length > 1}
-				<!-- Navigation buttons -->
-				<button class="nav-button prev" onclick={prevSlide} aria-label="Previous project">
-					←
-				</button>
-				<button class="nav-button next" onclick={nextSlide} aria-label="Next project"> → </button>
+				<!-- Navigation and Dots Container -->
+				<div class="navigation-container">
+					<button class="nav-button prev" onclick={prevSlide} aria-label="Previous project">
+						←
+					</button>
 
-				<!-- Dots indicator -->
-				<div class="dots-container">
-					{#each projects as _, index}
-						<button
-							class="dot"
-							class:active={index === currentIndex}
-							onclick={() => goToSlide(index)}
-							aria-label="Go to project {index + 1}"
-						></button>
-					{/each}
+					<!-- Dots indicator -->
+					<div class="dots-container">
+						{#each projects as _, index}
+							<button
+								class="dot"
+								class:active={index === currentIndex}
+								onclick={() => goToSlide(index)}
+								aria-label="Go to project {index + 1}"
+							></button>
+						{/each}
+					</div>
+
+					<button class="nav-button next" onclick={nextSlide} aria-label="Next project"> → </button>
 				</div>
 			{/if}
 		</div>
@@ -139,6 +142,9 @@
 <style>
 	.carousel-section {
 		margin: var(--size-8) 0;
+		/* width: 100%; */
+		max-width: min(800px, 100%);
+		overflow: hidden;
 	}
 
 	.carousel-section h2 {
@@ -146,12 +152,15 @@
 		margin-bottom: var(--size-6);
 		border-top: 2px solid var(--border);
 		padding-top: 0;
+		width: 100%;
+		max-width: 100%;
 	}
 
 	.carousel-container {
 		position: relative;
-		max-width: min(800px, 100%);
+		width: 100%;
 		margin: 0 auto;
+		overflow: hidden;
 	}
 
 	.carousel-wrapper {
@@ -167,6 +176,7 @@
 	.carousel-slide {
 		min-width: 100%;
 		flex-shrink: 0;
+		width: 100%;
 	}
 
 	.project-card {
@@ -178,6 +188,8 @@
 		min-height: 350px;
 		display: flex;
 		flex-direction: column;
+		width: calc(100% - var(--size-4));
+		box-sizing: border-box;
 	}
 
 	.card-content {
@@ -254,10 +266,15 @@
 		transform: translateY(-1px);
 	}
 
+	.navigation-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--size-4);
+		margin-top: var(--size-4);
+	}
+
 	.nav-button {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
 		background: rgba(0, 0, 0, 0.7);
 		color: white;
 		border: none;
@@ -268,25 +285,17 @@
 		cursor: pointer;
 		transition: background-color 0.2s ease;
 		z-index: 10;
+		position: static;
 	}
 
 	.nav-button:hover {
 		background: rgba(0, 0, 0, 0.9);
 	}
 
-	.nav-button.prev {
-		left: -60px;
-	}
-
-	.nav-button.next {
-		right: -60px;
-	}
-
 	.dots-container {
 		display: flex;
 		justify-content: center;
 		gap: var(--size-2);
-		margin-top: var(--size-4);
 	}
 
 	.dot {
@@ -314,17 +323,23 @@
 	@media (max-width: 768px) {
 		.carousel-container {
 			margin: 0 auto;
-			padding: 0 var(--size-2);
+			padding: 0 var(--size-3);
+			overflow: hidden;
 		}
 
 		.carousel-slide {
-			padding: 0 var(--size-3);
+			padding: 0;
 		}
 
 		.project-card {
-			margin: 0;
+			margin: 0 var(--size-1);
 			padding: var(--size-4);
 			min-height: 300px;
+			width: calc(100% - var(--size-2));
+		}
+
+		.navigation-container {
+			gap: var(--size-3);
 		}
 
 		.nav-button {
@@ -332,13 +347,37 @@
 			height: 40px;
 			font-size: 16px;
 		}
+	}
 
-		.nav-button.prev {
-			left: -30px;
+	/* Very small screens */
+	@media (max-width: 480px) {
+		.carousel-container {
+			padding: 0 var(--size-2);
 		}
 
-		.nav-button.next {
-			right: -30px;
+		.project-card {
+			margin: 0;
+			padding: var(--size-3);
+			min-height: 280px;
+			width: 100%;
+		}
+
+		.navigation-container {
+			gap: var(--size-2);
+		}
+
+		.nav-button {
+			width: 36px;
+			height: 36px;
+			font-size: 14px;
+		}
+
+		.project-card h3 {
+			font-size: var(--font-size-2);
+		}
+
+		.meta-item {
+			font-size: var(--font-size-0);
 		}
 	}
 </style>

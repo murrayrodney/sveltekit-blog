@@ -57,7 +57,9 @@
 	<!-- prettier-ignore-end -->
 
 	<!-- Projects Carousel -->
-	<ProjectCarousel projects={data.projects} />
+	<div style="width: 100vw;">
+		<ProjectCarousel projects={data.projects} />
+	</div>
 
 	<h2>Experiences</h2>
 
