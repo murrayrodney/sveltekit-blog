@@ -17,19 +17,21 @@
 				<a href="/projects/{project.slug}" class="title">{project.title}</a>
 				<p class="date">{formatDate(project.date)}</p>
 				<p class="description">{project.description}</p>
-				
+
 				{#if project.value_added}
 					<div class="value-added">
-						<strong>Value Added:</strong> {project.value_added}
+						<strong>Value Added:</strong>
+						{project.value_added}
 					</div>
 				{/if}
-				
+
 				{#if project.skills_used}
 					<div class="skills">
-						<strong>Skills:</strong> {project.skills_used}
+						<strong>Skills:</strong>
+						{project.skills_used}
 					</div>
 				{/if}
-				
+
 				{#if project.categories && project.categories.length > 0}
 					<div class="tags">
 						{#each project.categories as category}
@@ -89,7 +91,8 @@
 		line-height: 1.6;
 	}
 
-	.value-added, .skills {
+	.value-added,
+	.skills {
 		margin: var(--size-2) 0;
 		font-size: var(--font-size-1);
 	}

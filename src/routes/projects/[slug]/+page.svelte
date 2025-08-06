@@ -19,13 +19,15 @@
 	<div class="project-meta">
 		{#if data.meta.value_added}
 			<div class="meta-item">
-				<strong>Value Added:</strong> {data.meta.value_added}
+				<strong>Value Added:</strong>
+				{data.meta.value_added}
 			</div>
 		{/if}
-		
+
 		{#if data.meta.skills_used}
 			<div class="meta-item">
-				<strong>Skills Used:</strong> {data.meta.skills_used}
+				<strong>Skills Used:</strong>
+				{data.meta.skills_used}
 			</div>
 		{/if}
 	</div>

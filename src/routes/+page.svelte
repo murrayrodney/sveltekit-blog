@@ -1,6 +1,9 @@
 <!-- prettier-ignore-file -->
 <script lang="ts">
 	import { theme } from '$lib/theme.svelte';
+	import ProjectCarousel from '$lib/components/ProjectCarousel.svelte';
+
+	let { data } = $props();
 </script>
 
 <main>
@@ -55,6 +58,9 @@
 		Statistics from Colorado State University.
 	</p>
 	<!-- prettier-ignore-end -->
+
+	<!-- Projects Carousel -->
+	<ProjectCarousel projects={data.projects} />
 
 	<h2>Experiences</h2>
 
