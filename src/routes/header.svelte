@@ -29,6 +29,9 @@
 
 	<ul class="links" class:open={isMenuOpen}>
 		<li>
+			<a href="/projects" on:click={closeMenu}>Projects</a>
+		</li>
+		<li>
 			<a href="/posts" on:click={closeMenu}>Posts</a>
 		</li>
 		<li>
