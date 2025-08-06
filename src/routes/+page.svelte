@@ -1,6 +1,8 @@
 <!-- prettier-ignore-file -->
 <script lang="ts">
-	import { theme } from '$lib/theme.svelte';
+	import ProjectCarousel from '$lib/components/ProjectCarousel.svelte';
+
+	let { data } = $props();
 </script>
 
 <main>
@@ -43,18 +45,21 @@
 		</div>
 	</div>
 
-	<h2>Engineer/Data Scientist</h2>
+	<h2>Data Scientist/Engineer</h2>
 
 	<!-- prettier-ignore-start -->
 	<p>
-		I am a data scientist who started off as a petroleum engineer in Alaska after graduating from
-		the University of Wyoming with a degree in Chemical Engineering. After working as an engineer
-		for several years I discovered my love for working with data problems which lead me to a senior
-		data scientist at ConocoPhillips. After several months of working in that position and
-		recognizing an opportunity to build a better foundation in statistics I got a Master of Applied
-		Statistics from Colorado State University.
+		Senior Data Scientist with 11+ years of experience and a petroleum engineering background,
+		skilled at architecting scalable data platforms (Snowflake, dbt, AWS) and deploying ML/AI
+		solutions that drive multimillion-dollar impacts. Holds a degree in Chemical Engineering from
+		the University of Wyoming and a Master of Applied Statistics from Colorado State University.
 	</p>
 	<!-- prettier-ignore-end -->
+
+	<!-- Projects Carousel -->
+	<div style="width: 100vw;">
+		<ProjectCarousel projects={data.projects} />
+	</div>
 
 	<h2>Experiences</h2>
 
@@ -62,54 +67,63 @@
 		<div class="experience">
 			<h3>Senior Data Scientist</h3>
 			<p class="company">ConocoPhillips</p>
-			<p class="date-location">June 2020 – Present | Helena, MT (Remote)</p>
+			<p class="date-location">07/2014 - Present | Helena, MT (Remote)</p>
 			<p class="description">
-				Lead data science initiatives to optimize oilfield operations, production, and data
-				infrastructure using advanced analytics, machine learning, and cloud technologies.
+				Lead data science initiatives across multiple functions to optimize oilfield operations,
+				production, and data infrastructure using advanced analytics, machine learning, and cloud
+				technologies.
 			</p>
 			<ul class="responsibilities">
 				<li>
-					Utilized reinforcement learning with a custom reservoir model for waterflood optimization
-					resulting in &gt;$9 million annual increase in revenue.
+					Increased annual revenue by &gt;$9 million through utilization of reinforcement learning
+					with a Python based environment for waterflood optimization.
 				</li>
 				<li>
-					Performed reliability analysis on ESP runtime variations across vendors, providing
-					data-driven insights for vendor selection for future wells.
+					Added &gt;$6 million of annual revenue by deploying a neural network combined with a
+					genetic algorithm for optimization of production wells. Developed a robust deployment
+					pipeline integrating the AWS Sagemaker deployment and process control environments for
+					seamless operational use.
 				</li>
 				<li>
-					Led a team to trial and deploy a machine learning model and optimizer in AWS integrated
-					with process control systems for use by operations increasing revenue by &gt;$6 million
-					annually.
+					30x increase in speed of production rate forecasting while maintaining forecast accuracy
+					enabled engineers to analyze access results in near real-time for field analysis. This was
+					accomplished through the development of a deep learning model deployed via Ray for
+					distributed computing and utilizing AWS S3 and Athena for data storage and querying.
 				</li>
 				<li>
-					Led a team and developed a model to forecast production rates. Implemented with
-					distributed computing to reduce time to insights by &gt;30x.
+					Reduced code volume and complexity by 30% and developed robust CI/CD pipelines for 5 key
+					projects by refactoring Python-based data pipelines to leverage Snowflake and dbt. The
+					effort streamlined processes and established a culture of technical excellence in the team
+					through targeted mentorship and upskilling.
 				</li>
 				<li>
-					Established as a technical authority in data warehousing technologies (Snowflake, AWS
-					Athena, dbt), reducing technical debt and accelerating time to insights. Mentored and
-					upskilled engineers, promoting a culture of data excellence.
+					Projected 40-60 hours/month time savings through implementation of simplified well
+					performance workflows built in SvelteKit and JavaScript.
+				</li>
+				<li>
+					Identified and piloted dbt Cloud for Snowflake data transformations, driving corporate
+					approval to standardize dbt workflows with GitHub for version control and robust CI/CD
+					pipelines.
 				</li>
 			</ul>
 		</div>
-
 		<div class="experience">
 			<h3>Voidage Management Coordinator</h3>
 			<p class="company">ConocoPhillips</p>
-			<p class="date-location">January 2019 – June 2020 | Anchorage, AK</p>
+			<p class="date-location">Anchorage, AK</p>
 			<p class="description">
 				Coordinated waterflood and gas injection operations, leveraging analytics and optimization
 				to maximize production and efficiency across assets.
 			</p>
 			<ul class="responsibilities">
 				<li>
-					Developed and deployed a surface network model utilizing machine learning and genetic
-					algorithms to optimize daily production and injection increasing revenue by &gt;$5 million
-					annually from operational changes to injection systems. Presented in <a
+					&gt;$5 million annual increase in revenue from operational changes. Accomplished by
+					collaborating in a multidisciplinary team to deploy a deep learning network coupled with a
+					genetic algorithm for production optimization analysis by engineers. Published in <a
 						href="https://onepetro.org/SPEATCE/proceedings-abstract/20ATCE/20ATCE/D021S006R002/451260"
 						target="_blank"
-						rel="noopener noreferrer">SPE-201760-MS.</a
-					>
+						rel="noopener noreferrer">SPE-201760-MS</a
+					>.
 				</li>
 				<li>
 					Implemented custom optimization algorithms to allocate resources for water alternating gas
@@ -117,16 +131,19 @@
 					hrs./week.
 				</li>
 				<li>
-					Actively shared new data analysis processes with two international business units, leading
-					to adoption and implementation of the process in Norwegian assets.
+					Shared data analysis processes and BI tools for analysis of streamlines simulation results
+					with two international business units resulting in adoption in Norwegian assets.
+				</li>
+				<li>
+					Provide data-driven insights to engineers for injector performance through the maintenance
+					and analysis of results from a reservoir simulation model.
 				</li>
 			</ul>
 		</div>
-
 		<div class="experience">
 			<h3>Reservoir Engineer</h3>
 			<p class="company">ConocoPhillips</p>
-			<p class="date-location">July 2014 – January 2019 | Anchorage, AK</p>
+			<p class="date-location">Anchorage, AK</p>
 			<p class="description">
 				Provided reservoir engineering support for waterflood optimization, project economics, and
 				simulation studies to drive value in mature assets.
@@ -137,8 +154,8 @@
 					NPV.
 				</li>
 				<li>
-					Utilized an HPC cluster and reservoir simulation to analyze performance of 500 injector
-					wells.
+					Reduced time to insight of &gt;1000 wells via utilization of reservoir simulation on a HPC
+					cluster.
 				</li>
 				<li>
 					Led pattern health reviews resulting in decisions leading to a &gt; $6 million annual
@@ -146,84 +163,98 @@
 				</li>
 			</ul>
 		</div>
-
-		<div class="experience">
-			<h3>Engineer</h3>
-			<p class="company">ConocoPhillips</p>
-			<p class="date-location">July 2014 - October 2016 | Anchorage, AK</p>
-
-			<p class="description">
-				Studied historical fill clean outs done with coiled tubing to optimize selection of future
-				candidates.
-			</p>
-			<ul class="responsibilities">
-				<li>
-					Utilize type pattern and full field reservoir models to optimize selection of current and
-					future EOR targets.
-				</li>
-			</ul>
-		</div>
 	</dl>
+
+	<h2>Education</h2>
+	<ul class="skills">
+		<li class="skill">
+			<h3>Master of Applied Statistics</h3>
+			<p>Colorado State University &bull; GPA: 4.0 &bull; 08/2021 - 05/2024</p>
+		</li>
+		<li class="skill">
+			<h3>B.S. Chemical Engineering</h3>
+			<p>University of Wyoming &bull; GPA: 3.74 &bull; 08/2010 - 05/2014</p>
+		</li>
+	</ul>
 
 	<h2>Skills</h2>
 
 	<ul class="skills">
 		<li class="skill">
-			<h3>Python</h3>
+			<h3>AWS (Sagemaker, Athena, S3)</h3>
 			<p>
-				Use of Python for scientific computing, machine learning, and data science workflows.
-				Familiar with libraries such as Numpy, Pandas, Keras/Tensorflow/ PyMC, Scikit-learn
+				Integrated S3, Athena, and Sagemaker to build scalable data pipelines, deploy ML models, and
+				enable real-time analytics for oilfield operations.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>R</h3>
+			<h3>CI/CD</h3>
 			<p>
-				Use of R for statistical modeling and analysis of experiments. Familiar with the Tidyverse,
-				survival modeling, and mixed modeling libraries.
+				Developed and maintained CI/CD pipelines for automated testing and deployment of data
+				science and analytics projects, ensuring rapid and reliable delivery.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>dbt</h3>
+			<p>
+				Designed and managed data transformation workflows in dbt for Snowflake, standardizing
+				analytics engineering and enabling robust version control and CI/CD processes with GitHub.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Distributed Computing</h3>
+			<p>
+				Leveraged Ray to accelerate model training and inference, reducing time to insight for large
+				datasets.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Docker</h3>
+			<p>
+				Containerized data science applications for consistent development, testing, and deployment
+				across environments.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Python</h3>
+			<p>
+				Developed machine learning and Bayesian models for production optimization and forecasting
+				using PyMC, scikit-learn, and Keras/TensorFlow.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Snowflake</h3>
+			<p>
+				Architected and optimized cloud data warehouses in Snowflake to support analytics,
+				reporting, and machine learning workflows.
 			</p>
 		</li>
 		<li class="skill">
 			<h3>SQL</h3>
-			<p>Querying, summarizing, and manipulating large datasets</p>
-		</li>
-		<li class="skill">
-			<h3>Statistics</h3>
 			<p>
-				Application of statistics in the engineering domain to uncover important relationships and
-				inform decisions. Significant utilization of both tradtional (frequentist) and Bayesian
-				methods for modeling and analysis.
+				Designed and executed complex SQL queries for data extraction, transformation, and analysis
+				across large-scale datasets.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>Maching learning</h3>
+			<h3>SvelteKit</h3>
 			<p>
-				Implementation of machine learning algorithms to make better and faster predictions with an
-				emphasis in integration of physics based processes.
+				Built interactive web applications and internal tools for engineering workflows using
+				SvelteKit and JavaScript.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>Reinforcement Learning</h3>
-			<p>Leveraged for waterflood optimization with custom built environments.</p>
-		</li>
-		<li class="skill">
-			<h3>AWS</h3>
+			<h3>Git</h3>
 			<p>
-				Use AWS services to integrate new data sources into datalakes and make available to other
-				engineers.
+				Used Git, GitHub, and GitLab for version control, collaboration, and CI/CD integration in
+				analytics and engineering projects.
 			</p>
 		</li>
 		<li class="skill">
-			<h3>Reservoir Engineering</h3>
+			<h3>Terraform</h3>
 			<p>
-				Expertise in optimization of existing production and injection patterns as a part of complex
-				integrated surface networks and extremely faulted reservoirs.
-			</p>
-		</li>
-		<li class="skill">
-			<h3>Production Engineering</h3>
-			<p>
-				Optimization of producing and injecting wells with a focus on complex integrated surface
-				networks.
+				Provisioned and managed cloud infrastructure as code using Terraform for reproducible and
+				scalable deployments of ML infrastructure.
 			</p>
 		</li>
 	</ul>
@@ -235,7 +266,7 @@
 		padding-top: 15px;
 		border-top: 2px solid var(--border);
 		width: 100vw;
-		font-size: 50px;
+		font-size: var(--font-size-fluid-2);
 	}
 
 	.skills {
@@ -363,14 +394,5 @@
 		object-fit: cover;
 		border-radius: 15px;
 		height: 50vh;
-	}
-	.profile-photo {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		object-fit: cover;
-		border-radius: 15px;
-		height: 50vh;
-		margin-top: 125px;
 	}
 </style>
