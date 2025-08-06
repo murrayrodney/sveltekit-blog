@@ -144,7 +144,7 @@
 	.carousel-section h2 {
 		font-size: var(--font-size-fluid-2);
 		margin-bottom: var(--size-6);
-		border-top: none;
+		border-top: 2px solid var(--border);
 		padding-top: 0;
 	}
 

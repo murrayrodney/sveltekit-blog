@@ -241,7 +241,7 @@
 		padding-top: 15px;
 		border-top: 2px solid var(--border);
 		width: 100vw;
-		font-size: 50px;
+		font-size: var(--font-size-fluid-2);
 	}
 
 	.skills {
