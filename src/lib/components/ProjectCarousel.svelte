@@ -150,7 +150,7 @@
 
 	.carousel-container {
 		position: relative;
-		max-width: 800px;
+		max-width: min(800px, 100%);
 		margin: 0 auto;
 	}
 
@@ -313,7 +313,12 @@
 	/* Mobile responsiveness */
 	@media (max-width: 768px) {
 		.carousel-container {
-			margin: 0 var(--size-2);
+			margin: 0 auto;
+			padding: 0 var(--size-2);
+		}
+
+		.carousel-slide {
+			padding: 0 var(--size-3);
 		}
 
 		.project-card {
@@ -329,22 +334,11 @@
 		}
 
 		.nav-button.prev {
-			left: -45px;
+			left: -30px;
 		}
 
 		.nav-button.next {
-			right: -45px;
-		}
-	}
-
-	/* For very small screens, position buttons inside again */
-	@media (max-width: 500px) {
-		.nav-button.prev {
-			left: 5px;
-		}
-
-		.nav-button.next {
-			right: 5px;
+			right: -30px;
 		}
 	}
 </style>
