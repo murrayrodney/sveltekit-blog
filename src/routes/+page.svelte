@@ -45,7 +45,7 @@
 		</div>
 	</div>
 
-	<h2>Engineer/Data Scientist</h2>
+	<h2>Data Scientist/Engineer</h2>
 
 	<!-- prettier-ignore-start -->
 	<p>
