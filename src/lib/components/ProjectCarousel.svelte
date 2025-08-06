@@ -7,10 +7,10 @@
 	}
 
 	let { projects = [] }: Props = $props();
-	
+
 	let currentIndex = $state(0);
 	let isAutoPlaying = $state(true);
-	let intervalId: number | undefined;
+	let intervalId: ReturnType<typeof setInterval> | undefined;
 
 	// Auto-play functionality
 	function startAutoPlay() {
@@ -46,7 +46,7 @@
 		if (projects.length > 1) {
 			startAutoPlay();
 		}
-		
+
 		return () => {
 			stopAutoPlay();
 		};
@@ -54,15 +54,20 @@
 </script>
 
 {#if projects.length > 0}
-	<section class="carousel-section">
+	<!-- <h2 style="margin-top: 10px;">Featured Projects</h2> -->
+
+	<div class="carousel-section">
 		<h2>Featured Projects</h2>
-		
-		<div 
+		<div
 			class="carousel-container"
 			role="region"
 			aria-label="Featured projects carousel"
-			onmouseenter={() => { isAutoPlaying = false; }}
-			onmouseleave={() => { isAutoPlaying = true; }}
+			onmouseenter={() => {
+				isAutoPlaying = false;
+			}}
+			onmouseleave={() => {
+				isAutoPlaying = true;
+			}}
 		>
 			<div class="carousel-wrapper">
 				<div class="carousel-track" style="transform: translateX(-{currentIndex * 100}%)">
@@ -75,21 +80,23 @@
 									</h3>
 									<p class="date">{formatDate(project.date)}</p>
 									<p class="description">{project.description}</p>
-									
+
 									<div class="meta-info">
 										{#if project.value_added}
 											<div class="meta-item">
-												<strong>Value Added:</strong> {project.value_added}
+												<strong>Value Added:</strong>
+												{project.value_added}
 											</div>
 										{/if}
-										
+
 										{#if project.skills_used}
 											<div class="meta-item">
-												<strong>Skills:</strong> {project.skills_used}
+												<strong>Skills:</strong>
+												{project.skills_used}
 											</div>
 										{/if}
 									</div>
-									
+
 									{#if project.categories && project.categories.length > 0}
 										<div class="tags">
 											{#each project.categories.slice(0, 3) as category}
@@ -97,31 +104,27 @@
 											{/each}
 										</div>
 									{/if}
-									
-									<a href="/projects/{project.slug}" class="read-more">
-										Learn More →
-									</a>
+
+									<a href="/projects/{project.slug}" class="read-more"> Learn More → </a>
 								</div>
 							</div>
 						</div>
 					{/each}
 				</div>
 			</div>
-			
+
 			{#if projects.length > 1}
 				<!-- Navigation buttons -->
 				<button class="nav-button prev" onclick={prevSlide} aria-label="Previous project">
 					←
 				</button>
-				<button class="nav-button next" onclick={nextSlide} aria-label="Next project">
-					→
-				</button>
-				
+				<button class="nav-button next" onclick={nextSlide} aria-label="Next project"> → </button>
+
 				<!-- Dots indicator -->
 				<div class="dots-container">
 					{#each projects as _, index}
-						<button 
-							class="dot" 
+						<button
+							class="dot"
 							class:active={index === currentIndex}
 							onclick={() => goToSlide(index)}
 							aria-label="Go to project {index + 1}"
@@ -130,7 +133,7 @@
 				</div>
 			{/if}
 		</div>
-	</section>
+	</div>
 {/if}
 
 <style>
@@ -141,7 +144,6 @@
 	.carousel-section h2 {
 		font-size: var(--font-size-fluid-2);
 		margin-bottom: var(--size-6);
-		text-align: center;
 		border-top: none;
 		padding-top: 0;
 	}
@@ -150,8 +152,6 @@
 		position: relative;
 		max-width: 800px;
 		margin: 0 auto;
-		overflow: hidden;
-		border-radius: 15px;
 	}
 
 	.carousel-wrapper {
@@ -242,7 +242,7 @@
 		align-self: flex-start;
 		padding: var(--size-2) var(--size-4);
 		background-color: var(--primary);
-		color: white;
+		color: var(--text-1);
 		text-decoration: none;
 		border-radius: var(--radius-2);
 		font-weight: bold;
@@ -275,11 +275,11 @@
 	}
 
 	.nav-button.prev {
-		left: 10px;
+		left: -60px;
 	}
 
 	.nav-button.next {
-		right: 10px;
+		right: -60px;
 	}
 
 	.dots-container {
@@ -290,17 +290,20 @@
 	}
 
 	.dot {
-		width: 12px;
-		height: 12px;
+		width: 0.75rem;
+		height: 0.75rem;
 		border-radius: 50%;
 		border: none;
 		background-color: var(--text-3);
 		cursor: pointer;
 		transition: background-color 0.2s ease;
+		padding: 0;
+		line-height: 1;
+		display: inline-block;
 	}
 
 	.dot.active {
-		background-color: var(--primary);
+		background-color: var(--surface-1);
 	}
 
 	.dot:hover {
@@ -325,6 +328,17 @@
 			font-size: 16px;
 		}
 
+		.nav-button.prev {
+			left: -45px;
+		}
+
+		.nav-button.next {
+			right: -45px;
+		}
+	}
+
+	/* For very small screens, position buttons inside again */
+	@media (max-width: 500px) {
 		.nav-button.prev {
 			left: 5px;
 		}
