@@ -6,6 +6,6 @@ export async function load({ fetch }) {
 
 	// Return only the first 5 projects for the carousel
 	return {
-		projects: projects.slice(0, 5)
+		projects: projects.slice(0, 6)
 	};
 }
