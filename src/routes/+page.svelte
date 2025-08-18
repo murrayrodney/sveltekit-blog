@@ -56,7 +56,7 @@
 	</p>
 	<!-- prettier-ignore-end -->
 
-	<div><ProjectCarousel projects={data.projects} /></div>
+	<div style="width: 50vh;"><ProjectCarousel projects={data.projects} /></div>
 
 	<h2>Experiences</h2>
 
