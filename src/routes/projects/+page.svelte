@@ -52,8 +52,14 @@
 
 	.projects {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		gap: var(--size-7);
+	}
+
+	@media (max-width: 480px) {
+		.projects {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
 	}
 
 	.project-card {
