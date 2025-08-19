@@ -9,6 +9,7 @@ categories:
 published: true
 value_added: Improved field metering allowing for better field optimization to increase production
 skills_used: Python, PyMC
+priority: 5
 ---
 
 # Summary

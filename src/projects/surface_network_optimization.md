@@ -8,12 +8,13 @@ categories:
   - Optimization
 published: true
 value_added: $5 million annually
-skills_used: Python, TensorFlow, Genetic Algorithms, Process Control, Docker, Sagemaker
+skills_used: Python, TensorFlow, Genetic Algorithms, Process Control, Docker, Sagemaker, Terraform
+priority: 2
 ---
 
 # Summary
 
-The optimization of integrated production and injection networks (internally known as GNOME - Gka Network Optimization ModEl)  involved developing and deploying a sophisticated surface network model that utilized machine learning algorithms combined with genetic algorithms and custom reward functions to optimize daily production and injection operations. This initiative resulted in significant operational improvements and increased production.
+The optimization of integrated production and injection networks (internally known as GNOME - Gka Network Optimization ModEl) involved developing and deploying a sophisticated surface network model that utilized machine learning algorithms combined with genetic algorithms and custom reward functions to optimize daily production and injection operations. This initiative resulted in significant operational improvements and increased production.
 
 ## Key Achievements
 
@@ -21,7 +22,9 @@ The optimization of integrated production and injection networks (internally kno
 - Implemented custom genetic algorithms and reward functions for real-time optimization
 - Achieved over $5 million in annual revenue increase through operational changes to injection systems during initial engineering analysis with the system
 - Further increased revenue of over $6 million through deployment via AWS Sagemaker and integration with SCADA systems
-- Successfully integrated model hosting in Sagemaker with process control systems while complying with internal security guidelinnes
+- Successfully integrated model hosting in Sagemaker with process control systems while complying with internal security guidelines
+- Leveraged Terraform to automate and standardize reproducible deployments of the optimization model on AWS Sagemaker
+- Custom Docker image to enable deployment of highly customized model deployment in Sagemaker
 
 ## Technical Approach
 

@@ -17,9 +17,20 @@ async function getPosts() {
 		}
 	}
 
-	posts = posts.sort(
-		(first, second) => new Date(second.date).getTime() - new Date(first.date).getTime()
-	);
+	posts = posts.sort((first, second) => {
+		// Sort by priority first (if both have priority)
+		if (first.priority !== null && first.priority !== undefined && 
+		    second.priority !== null && second.priority !== undefined) {
+			return first.priority - second.priority;
+		}
+		
+		// If only one has priority, prioritize it
+		if (first.priority !== null && first.priority !== undefined) return -1;
+		if (second.priority !== null && second.priority !== undefined) return 1;
+		
+		// If neither has priority, sort by date (newest first)
+		return new Date(second.date).getTime() - new Date(first.date).getTime();
+	});
 
 	return posts;
 }

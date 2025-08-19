@@ -4,8 +4,12 @@ export async function load({ fetch }) {
 	const response = await fetch('/api/projects');
 	const projects: Project[] = await response.json();
 
-	// Return only the first 5 projects for the carousel
+	// Return only projects with priority values for the carousel
+	const carouselProjects = projects.filter(project => 
+		project.priority !== null && project.priority !== undefined
+	);
+
 	return {
-		projects: projects.slice(0, 6)
+		projects: carouselProjects
 	};
 }

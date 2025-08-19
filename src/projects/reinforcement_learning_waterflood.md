@@ -9,6 +9,7 @@ categories:
 published: true
 value_added: $9 million annually
 skills_used: Python, Reinforcement Learning, Reservoir Simulation
+priority: 1
 ---
 
 # Summary
