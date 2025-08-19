@@ -9,6 +9,7 @@ categories:
 published: true
 value_added: $5 million annually
 skills_used: Python, TensorFlow, Genetic Algorithms, Process Control, Docker, Sagemaker, Terraform
+priority: 2
 ---
 
 # Summary

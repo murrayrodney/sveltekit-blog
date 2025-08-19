@@ -10,6 +10,7 @@ categories:
 published: true
 value_added: 30% reduction in code volume, 40-60 hours/month time savings, standardized analytics workflows
 skills_used: Python, dbt, Snowflake, GitHub, CI/CD
+priority: null
 ---
 
 ## Summary

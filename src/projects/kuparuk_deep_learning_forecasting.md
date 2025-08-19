@@ -10,6 +10,7 @@ categories:
 published: true
 value_added: 30x reduction in time to insights, rapid scenario analysis, improved operational decision making
 skills_used: Python, Deep Learning, Spark, AWS Athena, Reservoir Simulation
+priority: 3
 ---
 
 ## Summary

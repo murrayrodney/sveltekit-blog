@@ -12,6 +12,7 @@ categories:
 published: true
 value_added: Enhanced analysis speed and effectiveness, streamlined workflows, foundation for future model improvements
 skills_used: Python, MCP, SvelteKit, OpenAI Agent SDK, Data Engineering
+priority: 4
 ---
 
 ## Summary

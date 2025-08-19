@@ -19,4 +19,5 @@ export type Project = {
 	value_added?: string;
 	skills_used?: string;
 	image?: string;
+	priority?: number | null;
 };
