@@ -64,7 +64,7 @@
 		<div class="experience">
 			<h3>Senior Data Scientist</h3>
 			<p class="company">ConocoPhillips</p>
-			<p class="date-location">07/2014 - Present | Helena, MT (Remote)</p>
+			<p class="date-location">2020 - Present | Anchorage, AK</p>
 			<p class="description">
 				Lead data science initiatives across multiple functions to optimize oilfield operations,
 				production, and data infrastructure using advanced analytics, machine learning, and cloud
@@ -107,7 +107,7 @@
 		<div class="experience">
 			<h3>Voidage Management Coordinator</h3>
 			<p class="company">ConocoPhillips</p>
-			<p class="date-location">Anchorage, AK</p>
+			<p class="date-location">2019 - 2020 | Anchorage, AK</p>
 			<p class="description">
 				Coordinated waterflood and gas injection operations, leveraging analytics and optimization
 				to maximize production and efficiency across assets.
@@ -140,7 +140,7 @@
 		<div class="experience">
 			<h3>Reservoir Engineer</h3>
 			<p class="company">ConocoPhillips</p>
-			<p class="date-location">Anchorage, AK</p>
+			<p class="date-location">2014 - 2019 | Anchorage, AK</p>
 			<p class="description">
 				Provided reservoir engineering support for waterflood optimization, project economics, and
 				simulation studies to drive value in mature assets.

@@ -7,7 +7,7 @@ categories:
   - Genetic Algorithms
   - Optimization
 published: true
-value_added: $5 million annually
+value_added: $11 million annually
 skills_used: Python, TensorFlow, Genetic Algorithms, Process Control, Docker, Sagemaker, Terraform
 priority: 2
 ---
