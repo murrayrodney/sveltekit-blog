@@ -48,7 +48,7 @@
 	<h2>Data Scientist/Engineer</h2>
 
 	<!-- prettier-ignore-start -->
-	<p>
+	<p class="summary">
 		Senior Data Scientist with 11+ years of experience and a petroleum engineering background,
 		skilled at architecting scalable data platforms (Snowflake, dbt, AWS) and deploying ML/AI
 		solutions that drive multimillion-dollar impacts. Holds a degree in Chemical Engineering from
@@ -56,7 +56,7 @@
 	</p>
 	<!-- prettier-ignore-end -->
 
-	<div style="width: 50vh;"><ProjectCarousel projects={data.projects} /></div>
+	<div style="width: 50vh;" class="summary"><ProjectCarousel projects={data.projects} /></div>
 
 	<h2>Experiences</h2>
 
@@ -262,14 +262,24 @@
 		margin-top: 30px;
 		padding-top: 15px;
 		border-top: 2px solid var(--border);
-		width: 100vw;
+		width: 100%;
 		font-size: var(--font-size-fluid-2);
+		margin: auto;
+		text-align: left;
+	}
+
+	.summary {
+		margin: auto;
+		text-align: left;
+		max-width: 650px;
 	}
 
 	.skills {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
+		margin: auto;
+		max-width: 650px;
 
 		.skill {
 			border: 2px solid var(--border);
@@ -283,11 +293,15 @@
 		}
 	}
 	.experience {
-		margin-bottom: 20px;
 		padding: 15px;
 		border: 2px solid var(--border);
 		border-radius: 10px;
 		background-color: var(--surface-4); /* Fallback color added */
+		text-align: left;
+		margin: auto;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		max-width: 650px;
 	}
 
 	.experience h3 {
