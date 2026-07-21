@@ -62,9 +62,30 @@
 
 	<dl>
 		<div class="experience">
+			<h3>Lead Research Engineer</h3>
+			<p class="company">Xecta</p>
+			<p class="date-loation">2026 - Present | Helena, MT (Remote)</p>
+			<p class="description">
+				Lead and implement initiatives to research and develope new methodologies to better help customers
+				optimize and surveil their oil and gas assets.
+			</p>
+			<ul class="responsibilities">
+				<li>
+					Implement physics informed machine learning models for coal seam gas wells in Australia with progressive
+					cavity pumps, resulting immediate increases in gas production from an initial pilot set of 30 wells with
+					potential application to over 1,000 wells.
+				</li>
+				<li>
+					Implement a physics informed machine learning model for rod pump lifted coal seam gas wells in Australia
+					enabling network modeling of >1,000 wells to identify production bottlenecks.
+				</li>
+			</ul>
+		</div>
+
+		<div class="experience">
 			<h3>Senior Data Scientist</h3>
 			<p class="company">ConocoPhillips</p>
-			<p class="date-location">2020 - Present | Anchorage, AK</p>
+			<p class="date-location">2020 - 2025 | Anchorage, AK</p>
 			<p class="description">
 				Lead data science initiatives across multiple functions to optimize oilfield operations,
 				production, and data infrastructure using advanced analytics, machine learning, and cloud
@@ -163,6 +184,7 @@
 	</dl>
 
 	<h2>Education</h2>
+
 	<ul class="skills">
 		<li class="skill">
 			<h3>Master of Applied Statistics</h3>
@@ -178,24 +200,10 @@
 
 	<ul class="skills">
 		<li class="skill">
-			<h3>AWS (Sagemaker, Athena, S3)</h3>
+			<h3>Python</h3>
 			<p>
-				Integrated S3, Athena, and Sagemaker to build scalable data pipelines, deploy ML models, and
-				enable real-time analytics for oilfield operations.
-			</p>
-		</li>
-		<li class="skill">
-			<h3>CI/CD</h3>
-			<p>
-				Developed and maintained CI/CD pipelines for automated testing and deployment of data
-				science and analytics projects, ensuring rapid and reliable delivery.
-			</p>
-		</li>
-		<li class="skill">
-			<h3>dbt</h3>
-			<p>
-				Designed and managed data transformation workflows in dbt for Snowflake, standardizing
-				analytics engineering and enabling robust version control and CI/CD processes with GitHub.
+				Developed machine learning and Bayesian models for production optimization and forecasting
+				using PyMC, scikit-learn, and Keras/TensorFlow.
 			</p>
 		</li>
 		<li class="skill">
@@ -206,17 +214,24 @@
 			</p>
 		</li>
 		<li class="skill">
+			<h3>R</h3>
+			<p>
+				Utilized R to develop specialized mix-models and survival/reliability models
+			</p>
+		</li>
+		<li class="skill">
+			<h3>Rust</h3>
+			<p>
+				Utilized Rust to optimize lower level computations, in particular for multiphase hydraulics and optimization.
+				Resulted in ~100x reduction in runtime and lower memory usage for multiphase hydraulics calculations. Made
+				Rust functions available for use with Python and Polars using PyO3.
+			</p>
+		</li>
+		<li class="skill">
 			<h3>Docker</h3>
 			<p>
 				Containerized data science applications for consistent development, testing, and deployment
 				across environments.
-			</p>
-		</li>
-		<li class="skill">
-			<h3>Python</h3>
-			<p>
-				Developed machine learning and Bayesian models for production optimization and forecasting
-				using PyMC, scikit-learn, and Keras/TensorFlow.
 			</p>
 		</li>
 		<li class="skill">
@@ -231,6 +246,27 @@
 			<p>
 				Designed and executed complex SQL queries for data extraction, transformation, and analysis
 				across large-scale datasets.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>dbt</h3>
+			<p>
+				Designed and managed data transformation workflows in dbt for Snowflake, standardizing
+				analytics engineering and enabling robust version control and CI/CD processes with GitHub.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>AWS (Sagemaker, Athena, S3)</h3>
+			<p>
+				Integrated S3, Athena, and Sagemaker to build scalable data pipelines, deploy ML models, and
+				enable real-time analytics for oilfield operations.
+			</p>
+		</li>
+		<li class="skill">
+			<h3>CI/CD</h3>
+			<p>
+				Developed and maintained CI/CD pipelines for automated testing and deployment of data
+				science and analytics projects, ensuring rapid and reliable delivery.
 			</p>
 		</li>
 		<li class="skill">
